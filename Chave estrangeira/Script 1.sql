@@ -47,10 +47,10 @@ update cliente set idcomplemento = 2 where idcliente in (2,3,7);
 alter table cliente drop bairro;
 alter table cliente add idbairro integer;
 ALTER TABLE cliente ADD CONSTRAINT fk_cln_idbairro FOREIGN KEY (idbairro) REFERENCES bairro (idbairro);
-update cliente set idbairro = 1 where idbairro in(1,12,13);
-update cliente set idbairro = 2 where idbairro in(2,3,6,8,9);
-update cliente set idbairro = 3 where idbairro in(4,5);
-update cliente set idbairro = 4 where idbairro = 7;
+update cliente set idbairro = 1 where idcliente in(1,12,13);
+update cliente set idbairro = 2 where idcliente in(2,3,6,8,9);
+update cliente set idbairro = 3 where idcliente in(4,5);
+update cliente set idbairro = 4 where idcliente = 7;
 
 
 
