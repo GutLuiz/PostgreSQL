@@ -64,5 +64,8 @@ insert into Produto ( idProduto, idFornecedor , nome, valor) values (6, 3, 'Memo
 insert into Produto ( idProduto, idFornecedor , nome, valor) values (7, 1, 'Gabinete', '35' );
 
 
+-- Colocando dados na tabela transportadora
+insert into transportadora (idtransportadora,idmunicipio, nome , logradouro, numero) values (1, 9,'BS.Transportes', 'Rua das limas', '01');
+insert into transportadora (idtransportadora,idmunicipio, nome , logradouro, numero) values (2, 5,'União Transportes', null,null );
 
 
