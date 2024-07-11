@@ -44,11 +44,33 @@ select nome from cliente where not  idmunicipio = 1 or idmunicipio = 9;
 select nome from cliente where logradouro is null;
 
 -- 16
+select * from cliente where logradouro like 'Av%';
+-- 17
+select nome from vendedor WHERE nome like 'S%';
+
+-- 18
+Select nome from vendedor where nome like 'A%';
+
+-- 19
+select nome from vendedor where nome not like 'A%';
+
+-- 20
+select nome from municipio where nome like 'P%' and iduf = 1;
+
+-- 21
+select * from transportadora where logradouro is not null;
+
+-- 22
+select idpedido, idproduto from pedido_produto where idpedido = 1;
+select nome from produto where idproduto = 1 or idproduto = 2
+
+-- 23
+select * from pedido_produto where idpedido = 6 or idpedido = 10;
+	
+	
 
 
 
-select * from cliente
-select nome from municipio
 
 
 
