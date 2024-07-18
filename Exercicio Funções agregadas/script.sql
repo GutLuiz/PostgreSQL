@@ -89,13 +89,45 @@ select count(idpedido) from pedido where data_pedido between  '2008-04-15' and '
 --30
 select count(idpedido) from pedido where valor > 1000;
 
+--31
+select idproduto, sum(valor_unitario) from pedido_produto where idproduto = 1 group by idproduto;
 
-	
-	
+--32 
+select idproduto, sum(valor_unitario) from pedido_produto  group by idproduto;
+
+--33
+select idpedido, sum(valor) from pedido group by idpedido;
+
+--34
+select idpedido, count(idproduto) from pedido_produto group by idpedido;
+
+--35
+select sum(valor_unitario) from pedido_produto;
+
+--36
+select idpedido, avg(valor_unitario) from pedido_produto where idpedido= 6 group by idpedido;
+
+-- 37
+select max(idproduto), max(valor_unitario) from pedido_produto;
+
+-- 38
+select min(idproduto), min(valor_unitario) from pedido_produto;
+
+--39
+select idpedido, sum(quantidade) from pedido_produto group by idpedido;
+
+--40
+select sum(quantidade) from pedido_produto;
+
+
+select * from produto
 select * from pedido
 select * from vendedor
 select * from cliente
 select * from transportadora
+select * from pedido_produto
+	
+
 
 
 
