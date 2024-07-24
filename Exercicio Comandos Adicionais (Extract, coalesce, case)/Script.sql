@@ -33,3 +33,38 @@ select
 coalesce(extract(year from data_nascimento), 'Não informado')
 from 
 	cliente;
+
+-- 4
+select idmunicipio ,substring(nome from 5 for 10) from municipio
+
+-- 5
+select
+	upper(nome)
+from  
+	municipio;
+
+-- 6
+select
+	nome,
+	case genero
+		when 'M' then 'Masculino'
+		when 'F' then  'Feminino'
+	else 'outro'
+	end as genero
+from 
+	cliente;
+
+-- 7
+select 
+	nome,
+	valor,
+	case 
+		when valor >= 500 then 'Acima de 500' 
+		else 'Abaixo de 500'
+		end as faixa
+from
+	produto;
+
+
+
+	
