@@ -25,3 +25,5 @@ where valor > (select avg(valor)from pedido);
 
 
 
+
+

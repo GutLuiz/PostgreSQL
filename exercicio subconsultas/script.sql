@@ -54,6 +54,37 @@ left outer join
 where
 	mnc.idmunicipio in (select idmunicipio from transportadora where idtransportadora = 1 or idtransportadora = 2) --O in é usado para quando ter mais opções
 		
+-- 6
+update
+	pedido
+set
+	valor = valor +((valor * 5)/100)
+where
+	(select sum (pdp.valor_unitario) from pedido_produto pdp where pdp.idpedido = idpedido) > (select avg(valor_unitario) from pedido_produto)
+	
+
+-- 7
+select
+	cln.nome,
+	count(pdd.idpedido)
+from
+	pedido as pdd
+left outer join
+	cliente as cln on pdd.idcliente = cln.idcliente
+group by
+	cln.nome
+
+--ou
+	
+select
+	cln.nome,
+	(select count(idpedido) from pedido pdd where pdd.idcliente = cln.idcliente) as total
+from
+	cliente as cln
+	
+	
+
+
 
 
 	
