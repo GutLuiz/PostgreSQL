@@ -43,7 +43,20 @@ from
 where
 	idmunicipio = (select idmunicipio from transportadora where idtransportadora = 1); 
 	
+-- 5
+select
+	cln.nome,
+	mnc.nome as municipio
+from
+	cliente as cln
+left outer join
+	municipio as mnc on cln.idmunicipio = mnc.idmunicipio
+where
+	mnc.idmunicipio in (select idmunicipio from transportadora where idtransportadora = 1 or idtransportadora = 2) --O in é usado para quando ter mais opções
+		
 
+
+	
 
 	
 
