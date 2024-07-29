@@ -34,8 +34,18 @@ left outer join
 where
 	(select sum(quantidade) from pedido_produto pdp where pdp.idpedido = pdd.idpedido) >= 2;
 	
+-- 4
+select
+	nome,
+	idmunicipio
+from
+	cliente
+where
+	idmunicipio = (select idmunicipio from transportadora where idtransportadora = 1); 
 	
- 
+
+
+	
 
 
 	
