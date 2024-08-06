@@ -56,4 +56,33 @@ create sequence pedido_id_seq minvalue 16
 alter table pedido alter idpedido set default nextval('pedido_id_seq')
 alter sequence pedido_id_seq owned by pedido.idpedido
 
+-- produto
+select max(idproduto) + 1 from produto
+create sequence produto_id_seq minvalue 8
+alter table produto alter idproduto set default nextval('produto_id_seq')
+alter sequence produto_id_seq owned by produto.idproduto
+
+-- profissao
+select max(idprofissao) + 1 from profissao
+create sequence profissao_id_seq minvalue 6
+alter table profissao alter idprofissao set default nextval('profissao_id_seq')
+alter sequence profissao_id_seq owned by profissao.idprofissao
+
+-- transportadora
+select max(idtransportadora) + 1 from transportadora
+create sequence transportadora_id_seq minvalue 3
+alter table transportadora alter idtransportadora set default nextval('transportadora_id_seq')
+alter sequence transportadora_id_seq owned by transportadora.idtransportadora
+
+-- uf
+select max(iduf) + 1 from uf
+create sequence uf_id_seq minvalue 7
+alter table uf alter iduf set default nextval('uf_id_seq')
+alter sequence uf_id_seq owned by uf.iduf
+
+-- vendedor
+select max(idvendedor) + 1 from vendedor
+create sequence vendedor_id_seq minvalue 9
+alter table vendedor alter idvendedor set default nextval('vendedor_id_seq')
+alter sequence vendedor_id_seq owned by vendedor.idvendedor
 
