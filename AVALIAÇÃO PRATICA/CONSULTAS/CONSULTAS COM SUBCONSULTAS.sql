@@ -33,4 +33,3 @@ where
 
 
 
-select * from emprestimo_livro
