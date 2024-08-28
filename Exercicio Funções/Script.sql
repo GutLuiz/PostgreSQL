@@ -1,11 +1,21 @@
+drop function get_valor_pedido(iddpdd integer)
+
 -- 1
-create function get_valor_by_id(idv integer) returns varchar(50) language plpgsql as
+create or replace function get_valor_pedido(idpdd integer) returns varchar(20) language plpgsql as
 $$
-declare v float;
-begin
-	select valor into v from pedido where idcliente = idv;
-	return v;
-end;
+	begin
+		return (select formata_moeda(pdd.valor) from pedido pdd where pdd.idpedido = idpdd); 
+	end;
+$$;
+
+select get_valor_pedido(idpedido) from pedido 
+
+-- 2
+create function get_maior_pedido(idmaior integer) returns varchar(20) language plpgsql as
 $$
-select data_pedido, idcliente, get_valor_by_id(idcliente) from pedido
-	
+	begin
+		return(select max(pdd.valor) from pedido pdd where pdd.idpedido = idmaior);
+	end;
+$$;
+
+select get_maior_pedido(idpedido) from pedido
