@@ -1,5 +1,16 @@
 -- 1
-create procedure reajuste_valor(valor_reajuste integer) varchar(20) language sql as
+create procedure  reajusta_produto(idp integer, percentual float) language sql as
 $$
-	insert into produto(idproduto, valor) values (valor_reajuste + valor)
+	update produto set valor = valor + ((valor * percentual) / 100) where idproduto = idp;
+$$;
+call reajusta_produto(1,10)
+
+select * from produto where idproduto = 1
+
+-- 2
+create procedure exclua_produto(idpe integer) language sql as
 $$
+	delete from produto where idproduto = idpe;
+$$
+
+call exclua_produto(1)
