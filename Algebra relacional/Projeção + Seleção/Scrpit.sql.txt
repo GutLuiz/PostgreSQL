@@ -1,0 +1,11 @@
+-- fazendo uma junçao da projeção com o select:
+π tcode,acode σ year > 2001 ∧ year ≤ 2004 (participate) 
+π year, days σ days > 3 (stay)
+-- união e intersecção:
+π tcode (participate)
+π tcode (stay)
+-- aplicando
+-- Todos os resultados juntos
+π tcode (participate) ∪ π tcode (stay)
+-- O que estão nos dois parametros:
+π tcode (participate) ∩ π tcode (stay)
